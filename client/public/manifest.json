@@ -10,12 +10,12 @@
     {
       "src": "InLove.svg",
       "type": "image/svg",
-      "sizes": "292x292"
+      "sizes": "192x192"
     },
     {
       "src": "InLove.svg",
       "type": "image/svg",
-      "sizes": "712x712"
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
