@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+
+
+
+:root{
+  --footerHeight: 120px;
+  --footerWrapperBottomMargin: -120px;
+  --navFooterBG: red;
+}
+
+body{  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: Dosis, Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+}
+.nav.nav-wrapper, #footer{
+  background-color: var(--navFooterBG);
+}
+#wrapper{
+  min-height: 100vh;
+  margin-bottom: var(--footerWrapperBottomMargin);
+}
+
+#wrapper::after, #footer{
+  content: "";
+  display: block;
+
+  height: var(--footerHeight);
+}
+
+#footer{
+  overflow: hidden;
+}

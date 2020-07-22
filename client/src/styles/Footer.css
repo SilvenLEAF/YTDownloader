@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+#my-footer-copyright{
+  font-size: 90%;
+  font-family: Dosis;
+  color: #fff;
+}
+#myDeveloper{
+  font-family: Dosis;
+}
+
+
+
+
+
+
+
+
+/* +++++++++++++++++++++++++++++
+. --------SOCIAL ICONS--------
++++++++++++++++++++++++++++++ */
+
+.my-social-icons-holder{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* +++++++++++++++++++++++++++++
+PLACE THE CARDS AND CENTER THE ICONS
++++++++++++++++++++++++++++++ */
+.my-social-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  font-size: 160%;
+  margin: 5px;
+  width: 35px;
+  height: 35px;
+  border-radius: 30%;
+
+  color: #3498db;
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+
+  transition: 0.2s linear;
+
+}
+/* +++++++++++++++++++++++++++++
+CREATE BEFORE GHOST OF THE CARDS AND
+IT IS THE BLUE COVER. SO PLACE IT WELL!!!
++++++++++++++++++++++++++++++ */
+
+.my-social-icon::before{
+  content: "";
+  display: block;
+
+  width: 120%;
+  height: 120%;
+
+  transform: rotate(-45deg);
+
+  background: #3498db;
+
+  position: absolute;
+  top: 90%;
+  left: -110%;
+}
+/* +++++++++++++++++++++++++++++
+GIVE THE HOVER EFFECTS AND ANIMATION
++++++++++++++++++++++++++++++ */
+
+.my-social-icon:hover i{
+  color: #fff;
+  transform: scale(1.3);
+}
+.my-social-icon:hover::before{
+  animation: aaa 0.7s 1;
+  top: -10%;
+  left: -10%;
+}
+/* +++++++++++++++++++++++++++++
+.            CREATE THE SEXY ANIMATION
++++++++++++++++++++++++++++++ */
+
+@keyframes aaa {
+  0%{
+       top: 90%;
+       left: -110%;
+  }50%{
+       top: -30%;
+       left: 10%;
+  }100%{
+       top: -10%;
+       left: -10%;
+  }
+}

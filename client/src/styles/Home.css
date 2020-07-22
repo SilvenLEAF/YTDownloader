@@ -1,0 +1,33 @@
+#myHeroHolder{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;  
+}
+
+#myHero{
+  margin-top: 50px;
+  height: 100px;
+}
+
+#myHeroTitle{
+  position: relative;
+  top: -20px;
+  font-family: Dosis;
+}
+
+
+
+/* ******************************
+.          TABS BUG FIXING
+****************************** */
+/* .indicator{
+  left: 0px;
+  right: 119px;
+}
+#myMp3{
+  display: block;
+}
+#myMp4{
+  display: none;
+} */
