@@ -15,6 +15,11 @@ export class DownloadFormAudio extends Component {
   }
   handleSubmit = (e)=>{
     e.preventDefault();
+    this.state({
+      title: '',
+      youtubeUrl: ''
+    })
+    
     swal("Downloading", "Your video is downloading. Please wait!","success");    
 
     window.location.href = `/download/mp3?title=${this.state.title}&youtubeUrl=${this.state.youtubeUrl}`
@@ -25,13 +30,13 @@ export class DownloadFormAudio extends Component {
         <form onSubmit= { this.handleSubmit }>
           <div className="input-field">
             <i className="fa fa-youtube-play prefix"></i>
-            <input type="text" id="title" name="title" onChange= {this.handleChange} />
+            <input type="text" id="title" name="title" value= { this.state.title } onChange= {this.handleChange} />
             <label htmlFor="title">Title</label>
           </div>
 
           <div className="input-field">
             <i className="fa fa-link fa-rotate-90 prefix"></i>
-            <input type="text" id="youtubeUrl" name="youtubeUrl" onChange= {this.handleChange} required />
+            <input type="text" id="youtubeUrl" name="youtubeUrl" value= { this.state.youtubeUrl } onChange= {this.handleChange} required />
             <label htmlFor="youtubeUrl">Youtube URL</label>
           </div>
           
