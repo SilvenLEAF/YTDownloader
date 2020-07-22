@@ -1,0 +1,30 @@
+{
+  "name": "ytdownloader",
+  "version": "1.0.0",
+  "description": "An App to download youtube videos in MP3/MP4 formats!!",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SilvenLEAF/YTDownloader.git"
+  },
+  "keywords": [
+    "YTDownloader",
+    "Youtube",
+    "Downloader"
+  ],
+  "author": "SilvenLEAF",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SilvenLEAF/YTDownloader/issues"
+  },
+  "homepage": "https://github.com/SilvenLEAF/YTDownloader#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "ytdl-core": "^3.1.2"
+  }
+}
