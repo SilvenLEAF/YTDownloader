@@ -8,7 +8,7 @@ function About() {
       <div className="card">
         
         <div className="card-image">
-          <img src="/images/inLove.svg" alt=""/>
+          <img src="/images/InLove.svg" alt=""/>
           <div className="btn-floating pulse halfway-fab">
             <i className="fa fa-heart"></i>
           </div>
