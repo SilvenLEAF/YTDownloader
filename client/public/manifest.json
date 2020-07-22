@@ -1,12 +1,7 @@
 {
   "short_name": "YTDownload",
   "name": "Download Youtube in MP3/MP4",
-  "icons": [
-    {
-      "src": "InLove.svg",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/svg"
-    },
+  "icons": [    
     {
       "src": "InLove.svg",
       "type": "image/svg",
