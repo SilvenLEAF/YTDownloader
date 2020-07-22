@@ -31,7 +31,7 @@ export class DownloadFormVideo extends Component {
 
           <div className="input-field">
             <i className="fa fa-link fa-rotate-90 prefix"></i>
-            <input type="text" id="youtubeUrl" name="youtubeUrl" onChange= {this.handleChange} />
+            <input type="text" id="youtubeUrl" name="youtubeUrl" onChange= {this.handleChange} required />
             <label htmlFor="youtubeUrl">Youtube URL</label>
           </div>
           
