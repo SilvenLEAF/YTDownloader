@@ -15,7 +15,7 @@ export class DownloadFormAudio extends Component {
   }
   handleSubmit = (e)=>{
     e.preventDefault();
-    this.state({
+    this.setState({
       title: '',
       youtubeUrl: ''
     })
