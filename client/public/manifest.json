@@ -3,18 +3,18 @@
   "name": "Download Youtube in MP3/MP4",
   "icons": [
     {
-      "src": "InLove.svg",
+      "src": "InLove.png",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/svg"
+      "type": "image/png"
     },
     {
-      "src": "InLove.svg",
-      "type": "image/svg",
+      "src": "InLove.png",
+      "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "InLove.svg",
-      "type": "image/svg",
+      "src": "InLove.png",
+      "type": "image/png",
       "sizes": "512x512"
     }
   ],
