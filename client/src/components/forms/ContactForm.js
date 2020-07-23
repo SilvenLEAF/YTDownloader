@@ -1,9 +1,14 @@
+import M from 'materialize-css'
 import './../../styles/Form.css'
 
 import React, { Component } from 'react'
 import swal from 'sweetalert';
 
 export class ContactForm extends Component {
+  componentDidMount() {
+    // auto initialize all the things of Materialize CSS
+    M.AutoInit();
+  }
   handleSubmit = (e)=>{
     e.preventDefault();
     const myContactTitle = document.querySelector('#myContactTitle');
