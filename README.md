@@ -9,7 +9,7 @@ You can download any YouTube video in MP3 (audio) or MP4 (video) format. Just co
 
 
 ## **Technologies Used:**
-*NodeJS, Express, React, Materialize, SASS, git, ytdl-core*    
+*NodeJS, Express, React, Materialize, SASS, ytdl-core, git, cli, chrome-dev-tools*    
 
 
 ### **Hosted On**
