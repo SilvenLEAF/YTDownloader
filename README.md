@@ -5,11 +5,11 @@ You can download any YouTube video in MP3 (audio) or MP4 (video) format. Just co
 
 
 ## **See Live:**
-[SilvenLEAFYTDownloader.herokuapp.com](http://SilvenLEAFYTDownloader.herokuapp.com)    
+[SilvenLeafYTDownloader.herokuapp.com](http://SilvenLeafYTDownloader.herokuapp.com)    
 
 
 ## **Technologies Used:**
-**NodeJS, Express, React, Materialize, SASS, git, ytdl-core**    
+*NodeJS, Express, React, Materialize, SASS, git, ytdl-core*    
 
 
 ### **Hosted On**
