@@ -18,7 +18,7 @@ class Home extends Component {
       <div className="container">
         <div id="myHeroHolder">
           <img src="/images/InLove.svg" alt="" id= "myHero" />
-          <h3 className= "red-text center-align" id= "myHeroTitle"><i className="fa fa-youtube"></i> <span>Download</span></h3>
+          <h3 className= "red-text center-align" id= "myHeroTitle"><i className="fa fa-youtube"></i> <span>Downloader</span></h3>
         </div>    
   
         <div className="row">
