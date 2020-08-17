@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <nav className="nav nav-wrapper">
      <div className="container">
-     <Link to= "/" className= "brand-logo">YT Download</Link>
+     <Link to= "/" className= "brand-logo">YT Downloader</Link>
       <div className="sidenav-trigger hide-on-large-only" data-target= "mobilenav" id="myHam">
           <div className="t"></div>   
           <div className="m"></div>
