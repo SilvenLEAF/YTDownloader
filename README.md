@@ -1,7 +1,7 @@
 # YTDownloader
 *An App to download YouTube videos in mp3/mp4 formats!!!* 
 
-You can download any YouTube video in MP3 (audio) or MP4 (video) format. Just copy the URL, paste it in the App, choose MP3 or MP4, hit download. You can also give a title (optional) and it will be saved in that name on your device.      
+You can download any YouTube video in MP3 (audio) or MP4 (video) format. First choose MP3 or MP4, then copy the URL, paste it in the App, hit download. Voila!! You can also give a title (optional) and it will be saved in that name on your device.      
 
 
 ## **See Live:**
