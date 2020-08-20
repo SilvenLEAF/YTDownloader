@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
-
+app.use(express.json());
 
 
 // Serve static files from the React App
@@ -14,8 +14,6 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 /* --------------------------------------
 .               routes
 -------------------------------------- */
-app.use(bodyParser.json());
-
 // -----------routes handling
 app.use('/download', require('./routes/download-routes'));
 /* The "catchall" handler: for any request
