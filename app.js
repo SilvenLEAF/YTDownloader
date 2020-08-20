@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 
 /* --------------------------------------
-.               middlewares
+.               routes
 -------------------------------------- */
 app.use(bodyParser.json());
 
