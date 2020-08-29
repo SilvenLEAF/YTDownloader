@@ -17,4 +17,5 @@ You can download any YouTube video in MP3 (audio) or MP4 (video) format. First c
 
 
 
-<img src="/YTDownloader.png" />
+
+<img src="/YTDownloader Home.png" style="height: 400px" />
