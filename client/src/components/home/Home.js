@@ -1,6 +1,6 @@
 
 import M from 'materialize-css'
-import './../../styles/Home.css'
+import './../../styles/Home.scss'
 
 
 import React, { Component } from 'react'

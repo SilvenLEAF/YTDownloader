@@ -1,5 +1,5 @@
 import M from 'materialize-css'
-import './../../styles/Form.css'
+import './../../styles/Form.scss'
 
 
 
