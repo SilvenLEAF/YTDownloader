@@ -15,9 +15,9 @@ function Footer(props) {
 
 
         <div className="my-social-icons-holder">
-          <span className="my-social-icon"><i className="fa fa-github"></i></span>
-          <span className="my-social-icon"><i className="fa fa-instagram"></i></span>
-          <span className="my-social-icon"><i className="fa fa-youtube-play"></i></span>
+          <a href="https://twitter.com/SilvenLEAF?s=20" className="my-social-icon"><i className="fa fa-twitter"></i></a>
+          <a href="https://github.com/SilvenLEAF" className="my-social-icon"><i className="fa fa-github"></i></a>
+          <a href="https://web.telegram.org/#/im?p=@SilvenLEAF" className="my-social-icon"><i className="fa fa-telegram"></i></a>
         </div>
 
 
