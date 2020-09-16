@@ -1,5 +1,5 @@
 {
-  "short_name": "YTDownload",
+  "short_name": "YTDownloader",
   "name": "Download Youtube in MP3/MP4",
   "icons": [
     {
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#ff0000",
   "background_color": "#ffffff"
 }
