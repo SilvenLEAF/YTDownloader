@@ -65,8 +65,8 @@ class ContactForm extends Component {
   
   
           <div className="input-field">            
-            <input type="text" name="contactTitle" id= "myContactTitle"/>
-            <label htmlFor="contactTitle">Title</label>
+            <input type="text" name="contactTitle" id= "myContactTitle" required />
+            <label htmlFor="contactTitle">Title <span className="red-text">(*required)</span></label>
           </div>
 
   
@@ -76,8 +76,8 @@ class ContactForm extends Component {
   
   
           <div className="input-field">            
-            <textarea name="content" className= "materialize-textarea" id= "myContactContent"></textarea>            
-            <label htmlFor="content">Content</label>
+            <textarea name="content" className= "materialize-textarea" id= "myContactContent" required ></textarea>            
+            <label htmlFor="content">Content <span className="red-text">(*required)</span></label>
           </div>
 
 

@@ -6,8 +6,7 @@ import React, { Component } from 'react'
 import swal from 'sweetalert';
 
 
-
-
+import validateYouTubeURL from './ValidateYouTubeURL';
 
 
 
@@ -32,22 +31,34 @@ class DownloadFormAudio extends Component {
 
 
 
-
-
   handleSubmit = (e)=>{
     e.preventDefault();
-  
-  
-    this.setState({
-      title: '',
-      youtubeUrl: ''
-    })
-    
 
 
-    swal("Downloading", "Your video is downloading. Please wait!","success");    
-    window.location.href = `/download/mp3?title=${this.state.title}&youtubeUrl=${this.state.youtubeUrl}`
+    const res = validateYouTubeURL(this.state.youtubeUrl);
+
+    if(!res) {
+      swal("Invalid URL", "This is not a valid Youtube URL","error");
+    } 
+
+
+
+
+    else {
+          
+      swal("Downloading", "Your video is downloading. Please wait!","success");
+      window.location.href = `/download/mp3?title=${this.state.title}&youtubeUrl=${this.state.youtubeUrl}`
+
+      this.setState({
+        title: '',
+        youtubeUrl: ''
+      })
+    }
+
+
   }
+
+
 
 
 
@@ -67,7 +78,7 @@ class DownloadFormAudio extends Component {
           <div className="input-field">
             <i className="fa fa-youtube-play prefix"></i>
             <input type="text" id="title" name="title" value= { this.state.title } onChange= {this.handleChange} />
-            <label htmlFor="title">Title</label>
+            <label htmlFor="title">Title <span className="red-text">(Optional)</span></label>
           </div>
 
 
@@ -76,9 +87,9 @@ class DownloadFormAudio extends Component {
 
 
           <div className="input-field">
-            <i className="fa fa-link fa-rotate-90 prefix"></i>
+            <i className="fa fa-link prefix"></i>
             <input type="text" id="youtubeUrl" name="youtubeUrl" value= { this.state.youtubeUrl } onChange= {this.handleChange} required />
-            <label htmlFor="youtubeUrl">Youtube URL</label>
+            <label htmlFor="youtubeUrl">Youtube URL <span className="red-text">(*required)</span></label>
           </div>
           
 
@@ -90,6 +101,10 @@ class DownloadFormAudio extends Component {
             <button type="submit" className= "btn waves-effect waves-light" id= "myDownloadBtn">
               <i className="fa fa-download"></i> MP3
             </button>
+
+            <span className= "btn waves-effect waves-light blue" style={{ marginLeft: "15px" }} onClick={ ()=> this.setState({ title: '', youtubeUrl: '' }) } >
+              <i className="fa fa-paint-brush"></i> Clear
+            </span>
           </div>
 
 
