@@ -1,8 +1,8 @@
 const validateYouTubeURL = (url)=>{
   if (url != undefined || url != '') {
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\?v=)([^#\&\?]*).*/;
+    const regExp = /^(http(s)?:\/\/)?((w){3}.)?youtu(be|.be)?(\.com)?\/.+/;
     const match = url.match(regExp);
-    if (match && match[2].length == 11) {
+    if (match && match[0].length > 7) {
         // Do anything for being valid
         return true;
     }
@@ -10,6 +10,8 @@ const validateYouTubeURL = (url)=>{
         // Do anything for not being valid
         return false;
     }
+  } else {
+    return false;
   }
 }
 
