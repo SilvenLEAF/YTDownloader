@@ -1,0 +1,68 @@
+
+/* --------------------------------------
+.             VARIABLES
+-------------------------------------- */
+
+$themeColor: #f00;
+// $bodyBG: #fff;
+$bodyBG: #f4f4f4;
+
+$footerHeight: 120px;
+$wrapperBottomMargin: -120px;
+
+
+$awesomeShadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------
+To use it, do this....
+  li {
+    @include mQ(300px. 1200px){
+      font-size: 30px;
+    }
+
+------------------------- */
+
+
+@mixin mQ($arg...) {
+  @if length($arg) == 1 {
+    @media screen and (max-width: nth($arg, 1)){
+      @content;
+    }
+  }
+
+  @if length($arg) == 2 {
+    @media screen and (max-width: nth($arg, 1)) and (min-width: nth($arg, 2)) {
+      @content;
+    }
+  }
+}
+
+
+
+
+
+@mixin mHeight($arg...) {
+  @if length($arg) == 1 {
+    @media screen and (max-height: nth($arg, 1)){
+      @content;
+    }
+  }
+
+  @if length($arg) == 2 {
+    @media screen and (max-height: nth($arg, 1)) and (min-height: nth($arg, 2)) {
+      @content;
+    }
+  }
+}

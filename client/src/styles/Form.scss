@@ -1,12 +1,23 @@
 
+@import '../variables';
+
+
 #myContactForm {
+
+  h2{
+    margin: 20px;
+    font-family: 'Aladin', Dosis, sans-serif, cursive;
+  }
+
   margin: 20px;
   margin-top: 50px;
   padding:30px;
   padding-top: 10px;
 
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1),
-              -3px -3px 6px rgba(255, 255, 255, 0.2);
+  
+  
+  box-shadow: $awesomeShadow;
+  background-color: #fff;
 }
 
 
@@ -15,26 +26,3 @@
   background-color: red;
 }
 
-
-/* --------materialize */
-.container .input-field input[type=text]:focus + label, .container .input-field .materialize-textarea:focus + label {
-  color: red;
-}
-
-.container .input-field input[type=text]:focus, .container .input-field .materialize-textarea:focus  {
-  border-bottom: 1px solid red;
-  box-shadow: 0 1px 0 0 red;
-}
-.prefix.active {
-  color: red !important;
-}
-
-
-
-
-.tabs .indicator{
-  background-color: red;
-}
-.tabs .tab a:focus, .tabs .tab a:focus.active{
-  background: transparent;
-}

@@ -7,7 +7,6 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 
 import Home from './components/home/Home';
-import About from './components/subpages/About';
 import ContactForm from './components/forms/ContactForm';
 
 function App() {
@@ -22,7 +21,6 @@ function App() {
           <Switch>
             <Route exact path = "/" component= { Home }/>
             <Route exact path = "/contact" component= { ContactForm }/>
-            <Route exact path = "/about" component= { About }/>
           </Switch>
 
 
