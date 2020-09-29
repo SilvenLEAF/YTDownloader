@@ -160,5 +160,5 @@ nav ul li:hover {
 }
 
 .tabs .indicator {
-   background-color: #000 !important;
+   background-color: darken($themeColor, 10) !important;
 }
