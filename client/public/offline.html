@@ -4,9 +4,280 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Offline</title>
+  <style>
+ 
+  body {
+    margin: 0;
+    background:#f4f4f4;
+    font-family: sans-serif;
+
+    font-size: 14px;
+  
+
+  }
+  h1 {
+    margin: 20px 25px 0px 25px;
+  }
+  h3 {
+    margin: 0px 25px 25px 25px;
+    font-style: italic;
+  }
+  #myGameTitle{
+    color: #f00;
+    font-size: 270%;
+    text-align: center;
+    text-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+  }
+  p{
+    margin: 0px 25px 25px 25px;
+    text-align: center;
+  }
+  #myGameHolder {
+    display: flex;
+    justify-content: center;
+  }
+  #myControlHolder{
+    margin: 0 auto 25px auto;
+  }
+  #myLeftRIghtButtonsHolder {
+    text-align: center;
+  }
+  #myLeftRIghtButtonsHolder > div{
+    display: inline-block
+  }
+  .myButton {
+    margin: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 90%;
+    
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+    background-color: #f00;
+    
+  }
+  .upBtn {
+    margin: 20px auto 0 auto;
+  }
+  .downBtn {
+    margin: 0px auto 0 auto;
+  }
+  .rightBtn {
+    
+    margin-left: 20px;
+  }
+
+
+  canvas {
+    border:3px solid #500;
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+    background:#efe;
+  }
+
+  </style>
 </head>
-<body>
-  <h1>You're Offline!</h1>
-  <h3>Go online to see the app</h3>
+<body onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" oncontextmenu="return false">
+  <h1>You are OFFLINE</h1>
+  <h3>Go Online to See the APP. Or enjoy playing this game while you are offline.</h3>
+
+  <h1 id="myGameTitle">Snake GAME</h1>
+  <p>(Use ARROW KEYS or these Red Buttons to move your Snake. With LOVE from <span style="text-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);">SilvenLEAF</span>)</p>
+  <div id="myGameHolder">
+    <canvas id="game"></canvas>
+  </div>
+
+
+
+  <div id="myControlHolder">
+    <div class="myButton upBtn" onclick="up()" >Up</div>
+    <div id="myLeftRIghtButtonsHolder">
+      <div>
+        <div class="myButton leftBtn" onclick="left()">Left</div>
+      </div>
+      <div>
+        <div class="myButton rightBtn" onclick="right()">Right</div>
+      </div>
+    </div>
+    <div class="myButton downBtn" onclick="down()">Down</div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+
+    document.onkeydown = () =>{
+      switch (window.event.keyCode) {
+        case 37:
+          left()
+          break;
+        case 38:
+          up()
+          break;
+        case 39:
+          right()
+          break;
+        case 40:
+          down()    
+        
+      }
+    }
+
+
+
+
+
+    const canvas = document.getElementById('game');
+    const context = canvas.getContext('2d');
+
+      canvas.width = 300
+      canvas.height = 300
+
+      const canvasWidth = canvas.width;
+      const canvasHeight = canvas.height;
+
+    const grid = 10;
+    let colors = "rgb("
+        +Math.floor(Math.random() * 226)
+        +","
+        +Math.floor(Math.random() * 226)
+        +","
+        +Math.floor(Math.random() * 226)
+        +")";
+
+    const snake = {
+      x: 160,
+      y: 160,
+      dx: grid,
+      dy: 0,
+      cells: [],
+      maxCells: 4
+    };
+    let count = 0;
+    let apple = {
+      x: canvasWidth - 20,
+      y: canvasHeight - 20
+    };
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    function loop() {
+      requestAnimationFrame(loop);
+    
+      if (++count < 7) {
+        return;
+      }
+      count = 0;
+      context.clearRect(0,0,canvas.width,canvas.height);
+      snake.x += snake.dx;
+      snake.y += snake.dy;
+      // wrap snake position on edge of screen
+      if (snake.x < 0) {
+        snake.x = canvas.width - grid;
+      }
+      else if (snake.x >= canvas.width) {
+        snake.x = 0;
+      }
+      if (snake.y < 0) {
+        snake.y = canvas.height - grid;
+      }
+      else if (snake.y >= canvas.height) {
+        snake.y = 0;
+      }
+    
+      snake.cells.unshift({x: snake.x, y: snake.y});
+      
+      if (snake.cells.length > snake.maxCells) {
+        snake.cells.pop();
+      }
+
+      context.fillStyle = 'red';
+      context.fillRect(apple.x, apple.y, grid-1, grid-1)
+
+      context.fillStyle = colors;
+      snake.cells.forEach(function(cell, index) {
+        context.fillRect(cell.x, cell.y, grid-1, grid-1);
+      
+        if (cell.x === apple.x && cell.y === apple.y) {
+          snake.maxCells++;
+          apple.x = getRandomInt(0, 30) * grid;
+          apple.y = getRandomInt(0, 30) * grid;
+        }
+
+
+        for (let i = index + 1; i < snake.cells.length; i++) {
+      
+      
+          if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+            alert("Oops! You LOST!! Play AGAIN?");
+            colors = "rgb("
+        +Math.floor(Math.random() * 226)
+        +","
+        +Math.floor(Math.random() * 226)
+        +","
+        +Math.floor(Math.random() * 226)
+        +")";
+            snake.x = 160;
+            snake.y = 160;
+            snake.cells = [];
+            snake.maxCells = 4;
+            snake.dx = grid;
+            snake.dy = 0;
+            apple.x = getRandomInt(0, 25) * grid;
+            apple.y = getRandomInt(0, 25) * grid;
+          }
+        }
+      });
+    }
+
+      function left(){
+      if (snake.dx === 0) {
+        snake.dx = -grid;
+        snake.dy = 0;
+      }
+      }
+      function up(){
+      if ( snake.dy === 0) {
+        snake.dy = -grid;
+        snake.dx = 0;
+      }
+      }
+      function right(){
+      if ( snake.dx === 0) {
+        snake.dx = grid;
+        snake.dy = 0;
+      }
+      }
+      function down(){
+      if (snake.dy === 0) {
+        snake.dy = grid;
+        snake.dx = 0;
+      }
+      }
+      
+    requestAnimationFrame(loop);
+  </script>
+
 </body>
 </html>
