@@ -1,27 +1,39 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const path = require('path');
 
+
+
+
+// ------------FIRING EXPRESS APP
 const app = express();
 app.use(express.json());
-
-
-// Serve static files from the React App
 app.use(express.static(path.join(__dirname, 'client/build')));
+
+
+
+
+
 
 
 
 /* --------------------------------------
 .               routes
 -------------------------------------- */
-// -----------routes handling
-app.use('/download', require('./routes/download-routes'));
+app.use('/download', require('./routes/downloadRoutes'));
 /* The "catchall" handler: for any request
 that doesn't match one above, send back
 React's index.html file. */
 app.get('*', (req, res) =>{
   res.sendFile(path.join(__dirname,'client/build/index.html'));
 });
+
+
+
+
+
+
+
+
 
 
 
