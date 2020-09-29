@@ -35,10 +35,14 @@ class DownloadFormAudio extends Component {
     e.preventDefault();
 
 
-    const res = validateYouTubeURL(this.state.youtubeUrl);
+    const isValid = validateYouTubeURL(this.state.youtubeUrl);
 
-    if(!res) {
+    if(isValid === "invalid") {
       swal("Invalid URL", "This is not a valid Youtube URL","error");
+    } 
+    
+    else if(isValid === "playlist") {
+      swal("Playlist URL", "This is a Youtube Playlist URL. Give the URL of a single video, NOT a playlist.","error");
     } 
 
 

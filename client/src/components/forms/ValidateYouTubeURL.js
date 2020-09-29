@@ -4,18 +4,18 @@ const validateYouTubeURL = (url)=>{
     const playlistRegExp = /playlist\?list/;
 
     const isPlaylist = url.match(playlistRegExp);
-    if(isPlaylist) return false;
+    if(isPlaylist) return "playlist";
     
     
     
     const match = url.match(regExp);
     if (match && match[0].length > 7) {
         // Do anything for being valid
-        return true;
+        return "valid";
     }
     else {
         // Do anything for not being valid
-        return false;
+        return "invalid";
     }
   } else {
     return false;
