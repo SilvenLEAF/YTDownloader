@@ -93,7 +93,7 @@ class DownloadFormVideo extends Component {
             <i className="fa fa-link prefix"></i>
             <input type="text" id="youtubeUrl" name="youtubeUrl" value= { this.state.youtubeUrl } onChange= {this.handleChange} required />
             <label htmlFor="youtubeUrl">Youtube URL <span className="red-text">(*required)</span></label>
-          </div>
+          </div> 
 
 
 
