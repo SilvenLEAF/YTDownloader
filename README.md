@@ -27,7 +27,7 @@ You can download any,  and I mean any, paid or free YouTube videos in MP3 (audio
 
 
 ## **How to Install on your PC:**
-You MUST have NodeJS installed. First, clone the repo. Then open it in your favourite Text-Editor (mine is VS Code). Then run this command on your terminal ***npm install*** . This will install all the dependancies.
+You MUST have NodeJS installed. Also make sure you have internet connection while running the APP. First, clone the repo. Then open it in your favourite Text-Editor (mine is VS Code). Then run this command on your terminal ***npm install*** . This will install all the dependancies.
 
 Then run ***node app*** on your terminal. Wait until you see a message like this ***Server running on port 5000***. Then open your favourite Browser (mine is Chrome) and go to this url ***localhost:5000***. You'll see the App runnig LIVE on your PC. Congrats!
 
