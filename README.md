@@ -32,4 +32,5 @@ You MUST have NodeJS installed. Also make sure you have internet connection whil
 Then run ***node app*** on your terminal. Wait until you see a message like this ***Server running on port 5000***. Then open your favourite Browser (mine is Chrome) and go to this url ***localhost:5000***. You'll see the App runnig LIVE on your PC. Congrats!
 
 
+## Gallery 
 <img src="/YTDownloader Home.png" style="height: 400px" />
