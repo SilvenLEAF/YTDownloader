@@ -79,35 +79,39 @@ class DownloadFormVideo extends Component {
 
   render() {
     return (
-      <div className= "container">
+      <div>
   
   
-  
-        <form onSubmit= { this.handleSubmit }>
-          <div className="input-field">
-            <i className="fab fa-youtube prefix"></i>
-            <input type="text" id="title" name="title" value= { this.state.title } onChange= {this.handleChange} />
-            <label htmlFor="title">Title <span className="red-text">(Optional)</span></label>
+
+        <form onSubmit= { this.handleSubmit } className="myDefaultForm" >
+
+          <div className="myInputHolder">
+            <label htmlFor="youtubeUrl"><i className="fa fa-link"></i> Youtube URL <span className="red-text">(Required)</span></label>
+            
+            <div>
+            <input type="text" id="youtubeUrl" name="youtubeUrl" value= { this.state.youtubeUrl } onChange= {this.handleChange} required />
+            </div>
           </div>
 
 
 
 
 
-          <div className="input-field">
-            <i className="fa fa-link prefix"></i>
-            <input type="text" id="youtubeUrl" name="youtubeUrl" value= { this.state.youtubeUrl } onChange= {this.handleChange} required />
-            <label htmlFor="youtubeUrl">Youtube URL <span className="red-text">(*required)</span></label>
-          </div> 
+
+
+          <div className="myInputHolder">
+            <label htmlFor="title"><i className="fab fa-youtube"></i> Title <span className="grey-text">(Optional)</span></label>
+            
+            <div>
+              <input type="text" id="title" name="title" value= { this.state.title } onChange= {this.handleChange} />
+            </div>
+          </div>
 
 
 
-
-
-
-
+          
           <div className="input-field myBtnsHolder right-align">
-            <button type="submit" className= "btn myBtn waves-effect waves-light myCornerless" id= "myDownloadBtn">
+            <button type="submit" className= "btn waves-effect waves-light myBtn myCornerless" id= "myDownloadBtn">
               <i className="fa fa-download"></i> Download MP4
             </button>
 
@@ -119,6 +123,7 @@ class DownloadFormVideo extends Component {
 
 
 
+          
         </form>
       </div>
     )

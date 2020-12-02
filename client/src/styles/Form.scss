@@ -1,28 +1,123 @@
-
+ 
 @import '../variables';
 
 
-#myContactForm {
-
-  h2{
-    margin: 20px;
-    font-family: 'Aladin', Dosis, sans-serif, cursive;
-  }
-
-  margin: 20px;
-  margin-top: 50px;
+.myDefaultForm {
+  margin: 50px auto;    
   padding:30px;
-  padding-top: 10px;
+  padding-top: 20px;
 
-  
-  
+  max-width: 500px;
+
   box-shadow: $awesomeShadow;
   background-color: #fff;
-}
+
+  @include mQ(800px){
+    margin: 40px auto;    
+    margin-bottom: 0;
+  }
+
+  
+
+  .myDefaultFormName{
+    margin: 10px 0px;
+    font-family:  Dosis, sans-serif;
+  }  
+  
+  
+  .myDefaultFormFooter{
+    margin: 0;
+    margin-top: 50px;
+    
+    
+    p {
+      margin: 0;
+    }    
+  }  
+
+
+  
+
+  .btn {
+    margin: 0;
+    margin-left: 20px;
+
+    border-radius: 30px;
+    // margin-top: 20px;   
+  }
+
+
+  .myInputHolder {
+    margin: 0;
+    margin-bottom: 24px;
+
+
+    label{
+      display: block;
+      font-size: 150%;
+      font-weight: 700;
+      color: #000;
+      
+      
+      span {
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+    
+    
+    
+
+    
+    
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      box-shadow: $awesomeShadow;
+
+
+      margin: 0;
+      width: 100%;
+      padding: 0px 20px;
+      border-radius: 30px;
+      
+
+      background-color: #f1f1f1;
+
+      .myPrefix {
+        margin: 0;
+        margin-right: 20px;
+        font-size: 170%;
+
+        color: #777;
+      }
+
+
+      input {    
+        background-color: #f1f1f1;
+        border: none;
+      }
+
+      
+      textarea {    
+        background-color: #f1f1f1;
+        border: none;
+
+        min-height: 150px !important;
+      }
+
+
+    }
 
 
 
-#myDownloadBtn{
-  background-color: red;
-}
+
+
+  }
+
+}  
+
+
 
