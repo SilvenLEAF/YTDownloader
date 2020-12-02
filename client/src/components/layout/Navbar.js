@@ -12,9 +12,7 @@ function Navbar() {
 
         <Link to= "/" className= "brand-logo">YT Downloader</Link>
         <div className="sidenav-trigger hide-on-large-only" data-target= "mobilenav" id="myHam">
-            <div className="t"></div>   
-            <div className="m"></div>
-            <div className="b"></div>
+          <i className="fas fa-hamburger"></i>
         </div>
 
 

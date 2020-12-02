@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Aladin&display=swap&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap&family=Dosis:wght@200;300;400;500;600;700;800&display=swap&family=Ranchers&display=swap');
 
-@import './variables';
+
 
 /* --------------------------------------
 .      font-family: 'Aladin', cursive;
@@ -8,6 +8,22 @@
 .      font-family: Dosis;
 .      font-family: 'Ranchers', cursive;
 -------------------------------------- */
+
+
+@import './variables';
+
+
+
+/* ------------------------------------
+.     pageTitle
+
+.     (Navbar + Footer) Color
+.     Navbar Font
+.     Hamburger
+.     Sticky Footer
+.     Back Top Button
+.     Form Color
+------------------------------------ */
 
 
 
@@ -21,11 +37,11 @@ body{
   padding: 0;
   box-sizing: border-box;
   user-select: none;
-  font-family: sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 14px;  
 
-  background-color: $bodyBG;
-
+  background-color: $bodyBG;  
+  
 }
 
 
@@ -35,23 +51,65 @@ body{
 
 
 
+.myThemeColorText {
+  color: $themeColor;
+}
 
-
-
-
-
-/* ----------------------------------
-.           THEME COLOR
----------------------------------- */
-.nav.nav-wrapper, #footer{
+.myThemeColorBG {
   background-color: $themeColor;
 }
 
-.nav.nav-wrapper {
-  font-family: 'Aladin', cursive;
+.pageTitle {  
+  margin: 25px 0px;
 
+  // font-size: 270%;
+  font-weight: 800;
+  font-family: Dosis, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+.nav.nav-wrapper, #myFooter{
+  background-color: $themeColor;  
+}
+
+
+.nav.nav-wrapper {
+  font-family: Dosis, sans-serif;
+  font-weight: 500;
+
+  .myProfileNavIcon{
+    background-color: $bodyBG !important;
+    color: $themeColor !important;
+    font-family: Dosis !important;
+    font-weight: 700 !important;
+    font-size: 170% !important;
+    
+  }
+
+  .brand-logo{
+    font-size: 270%;
+    font-family: Aladin, Dosis, sans-serif;
+
+    @include mQ(400px){
+      font-size: 220%;
+    }
+  }
   
-  li a {
+  ul.hide-on-med-and-down li a {
+    font-size: 100%;
+    font-weight: 500;
+    font-family: Roboto, sans-serif;
+  }
+
+  ul.sidenav li a {
     font-size: 150%;
   }
 }
@@ -59,39 +117,17 @@ nav ul li:hover {
   background-color: rgba($color: $themeColor, $alpha: 0.3);
 }
 
+ul.sidenav {
+  background-color: $bodyBG;
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* ----------------------------------
-.           STICKY FOOTER
----------------------------------- */
-#wrapper{
-  min-height: 100vh;
-  margin-bottom: $wrapperBottomMargin;
+  
+  li {
+    background-color: $bodyBG;
+    &:nth-child(1) {
+      margin-top: 50px;
+    }
+  }
 }
-
-#wrapper::after, #footer{
-  content: "";
-  display: block;
-
-  height: $footerHeight;
-}
-
-#footer{
-  overflow: hidden;
-}
-
-
 
 
 
@@ -107,8 +143,13 @@ nav ul li:hover {
 ------------------------------------ */
 .sidenav-trigger{
   position: relative;
-  top: 10px;
+  // top: 10px;
   cursor: pointer;
+  color:#fff;
+  i{
+    margin: 0;
+    // font-size: 200%;
+  }
 }
 .sidenav-trigger > div {
   width: 30px;    
@@ -129,18 +170,148 @@ nav ul li:hover {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------
+.           STICKY FOOTER
+---------------------------------- */
+#myWrapper{
+  min-height: 100vh;
+  margin-bottom: $wrapperBottomMargin;
+
+  @include mQ(800px){
+    min-height: 0;
+    margin-bottom: 120px;
+   
+
+    overflow: auto;
+  }
+}
+
+#myWrapper::after, #myFooter{
+  content: "";
+  display: block;
+
+  height: $footerHeight;
+  overflow: hidden;
+
+
+  // @include mQ(800px){
+  //   display: none;
+  // }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------
+.            BACK TO TOP BUTTON
+------------------------------------ */
+#myBackToTopButton {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: $themeColor;
+
+  display: none;
+  // display: flex;  it will become flex on scroll
+  justify-content: center;
+  align-items: center;
+
+  border: 7px solid $bodyBG;
+  color: #fff;
+  font-size: 200%;
+
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1000;
+
+
+  @include mQ(800px){
+    width: 60px;
+    height: 60px;
+
+    font-size: 190%;
+
+    bottom: 70px;
+    right: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ------------------------------------
 .    FORM INPUT INTO PRIMARY COLOR
 ------------------------------------ */
-.input-field input[type=text]:focus + label, .input-field .materialize-textarea:focus + label {
+.input-field input + label {
+  color: #000;
+  pointer-events: none !important;
+
+  span {
+    margin: 0;
+    font-size: 80%;
+  }
+}
+
+
+
+.input-field input[type=text]:focus + label, .input-field input[type=number]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label, .input-field .materialize-textarea:focus + label {
   color: $themeColor !important;
 }
 
-.input-field input[type=text]:focus, .input-field .materialize-textarea:focus {
-  border-bottom: 1px solid $themeColor !important;
-  box-shadow: 0 1px 0 0 $themeColor !important;
+// .input-field input[type=text]:focus, .input-field input[type=number]:focus, .input-field input[type=email]:focus, .input-field input[type=password]:focus, .input-field .materialize-textarea:focus {
+//   border-bottom: 1px solid $themeColor !important;
+//   box-shadow: 0 1px 0 0 $themeColor !important;
+// }
+
+
+//  input[type=text]:focus,  input[type=number]:focus,  input[type=email]:focus,  input[type=password]:focus,  .materialize-textarea:focus {
+//   border-bottom: 1px solid $themeColor !important;
+//   box-shadow: 0 1px 0 0 $themeColor !important;
+// }
+
+input[type=text]:focus,  input[type=number]:focus,  input[type=email]:focus,  input[type=password]:focus,  .materialize-textarea, .materialize-textarea:focus {
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
 
+
+
+
+
+//---------------------ICON
 .prefix.active{
   color: $themeColor !important;
 }
@@ -148,17 +319,192 @@ nav ul li:hover {
 
 
 
+
+
+
+//---------------------TABS
 .tabs .tab a, .tabs .tab a:focus, .tabs .tab a:focus {
   background: $bodyBG !important;
   color: $themeColor !important;
 }
-
-
 .tabs .tab a.active, .tabs .tab a:focus, .tabs .tab a:focus.active {
   background: $themeColor !important;
   color: #fff !important;
 }
-
 .tabs .indicator {
-   background-color: darken($themeColor, 10) !important;
+   background-color: #000 !important;
+}
+
+
+
+
+
+
+//---------------------RADIO
+[type="radio"]:checked + span:after, 
+[type="radio"].with-gap:checked + span:before, 
+[type="radio"].with-gap:checked + span:after {
+ 
+  border: 2px solid $themeColor !important;
+ 
+}
+ 
+ 
+ 
+[type="radio"]:checked + span:after, 
+[type="radio"].with-gap:checked + span:after {
+ 
+  background-color: $themeColor !important;
+ 
+}
+
+
+
+
+
+
+
+// --------------------DATE
+.datepicker-date-display {
+  background-color: $themeColor !important;
+ }
+ 
+ .datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done {
+  color:$themeColor !important;
+ }
+ 
+ .datepicker-table td.is-today {
+  color: $themeColor !important;
+ }
+ 
+ .datepicker-table td.is-selected {
+  background-color: $themeColor !important;
+  color: #fff;
+ }
+
+ .dropdown-content.select-dropdown li span {
+   color: $themeColor !important;
+ }
+
+
+
+
+
+
+
+
+ 
+/* --------------------------------------
+.             BUTTONS HOLDER
+-------------------------------------- */
+.myBtnsHolder.left-align {
+  margin: 0;
+  margin-top: 20px;
+  > .btn {
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+}
+
+.myBtnsHolder.right-align {
+  margin: 0;
+  margin-top: 20px;
+  > .btn {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+}
+
+.myBtnsHolder.center-align {
+  margin: 0;
+  margin-top: 20px;
+  > .btn {
+    margin-top: 0px;
+  }
+}
+  
+  
+  
+  /* --------------------------------------
+.             DEFAULT BUTTONS
+-------------------------------------- */
+.btn.myBtn {
+  background-color: $themeColor !important;
+  &:visited {
+    background-color: $themeColor !important;
+  }
+  &:active {
+    background-color: $themeColor !important;
+  }
+  &:focus {
+    background-color: $themeColor !important;
+  }
+  &:hover {
+    background-color: darken($themeColor, 10) !important;
+  }
+}
+
+
+.myCornerless {
+  border-radius: 30px !important;
+}
+
+
+
+.btn.mySecondaryBtn {
+  color: #333 !important;
+  font-weight: 500;
+  background-color: $secondaryBtnColor !important;
+  &:visited {
+    background-color: $secondaryBtnColor !important;
+  }
+  &:active {
+    background-color: $secondaryBtnColor !important;
+  }
+  &:focus {
+    background-color: $secondaryBtnColor !important;
+  }
+  &:hover {
+    background-color: darken($secondaryBtnColor, 10) !important;
+  }
+}
+
+
+
+
+.btn.myRedBtn {
+  background-color: $redColor !important;
+  &:visited {
+    background-color: $redColor !important;
+  }
+  &:active {
+    background-color: $redColor !important;
+  }
+  &:focus {
+    background-color: $redColor !important;
+  }
+  &:hover {
+    background-color: darken($redColor, 10) !important;
+  }
+}
+
+
+
+
+
+
+.btn.myBlueBtn {
+  background-color: $blueColor !important;
+  &:visited {
+    background-color: $blueColor !important;
+  }
+  &:active {
+    background-color: $blueColor !important;
+  }
+  &:focus {
+    background-color: $blueColor !important;
+  }
+  &:hover {
+    background-color: darken($blueColor, 10) !important;
+  }
 }
