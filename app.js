@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 
 if(process.env.NODE_ENV !== 'production'){
   // if we are on development, load development environmental variables
@@ -43,6 +44,17 @@ app.get('*', (req, res) =>{
 
 
 
+
+
+
+
+// ERRORS HANDLER
+app.use((err, req, res, next)=>{
+  console.log(chalk.red(err.message));
+
+  console.log(err);
+  res.json({ msg: `Server error`, error: err.message })
+});
 
 
 
