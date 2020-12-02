@@ -23,7 +23,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <div id="wrapper">
+        <div id="myWrapper">
 
           <Navbar/>
           <Switch>
@@ -42,7 +42,7 @@ function App() {
         </div>
 
 
-        <div id="footer">
+        <div id="myFooter">
           <Footer/>
         </div>
 
