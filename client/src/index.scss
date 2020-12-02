@@ -325,14 +325,17 @@ input[type=text]:focus,  input[type=number]:focus,  input[type=email]:focus,  in
 //---------------------TABS
 .tabs .tab a, .tabs .tab a:focus, .tabs .tab a:focus {
   background: $bodyBG !important;
-  color: $themeColor !important;
+  color: #111 !important;
 }
 .tabs .tab a.active, .tabs .tab a:focus, .tabs .tab a:focus.active {
-  background: $themeColor !important;
-  color: #fff !important;
+  background: $bodyBG !important;
+  color: $themeColor !important;
+  font-weight: 700;
 }
 .tabs .indicator {
-   background-color: #000 !important;
+  background-color: $themeColor !important;
+  top: 0;
+  
 }
 
 
