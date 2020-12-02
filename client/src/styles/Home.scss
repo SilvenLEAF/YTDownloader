@@ -1,16 +1,20 @@
-#myHeroHolder{
+@import '../variables.scss';
+
+
+
+.myHeroHolder{
+  margin-top: 100px;
+  
+
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;  
 }
 
-#myHero{
-  margin-top: 50px;
-  height: 100px;
-}
 
-#myHeroTitle{
+
+.myHeroTitle{
   position: relative;
   top: -20px;
   font-family: Ranchers, Aladin, Dosis, sans-serif;

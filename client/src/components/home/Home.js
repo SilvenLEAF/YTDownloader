@@ -25,11 +25,11 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container myHomePage">
 
 
-        <div id="myHeroHolder">          
-          <h3 className= "red-text center-align" id= "myHeroTitle"><i className="fab fa-youtube"></i> <span>Downloader</span></h3>
+        <div className="myHeroHolder">          
+          <h3 className= "red-text center-align myHeroTitle"><i className="fab fa-youtube"></i> <span>Downloader</span></h3>
         </div>    
 
 

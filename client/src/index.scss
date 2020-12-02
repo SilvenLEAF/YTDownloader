@@ -189,13 +189,13 @@ ul.sidenav {
   min-height: 100vh;
   margin-bottom: $wrapperBottomMargin;
 
-  @include mQ(800px){
-    min-height: 0;
-    margin-bottom: 120px;
+  // @include mQ(800px){
+  //   min-height: 0;
+  //   margin-bottom: 120px;
    
 
-    overflow: auto;
-  }
+  //   overflow: auto;
+  // }
 }
 
 #myWrapper::after, #myFooter{
