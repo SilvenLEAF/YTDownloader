@@ -1,3 +1,12 @@
+
+if(process.env.NODE_ENV !== 'production'){
+  // if we are on development, load development environmental variables
+  require('dotenv').config()
+}
+
+
+
+
 const express = require('express');
 const path = require('path');
 
@@ -23,6 +32,10 @@ app.use('/download', require('./routes/downloadRoutes'));
 /* The "catchall" handler: for any request
 that doesn't match one above, send back
 React's index.html file. */
+
+app.use(require('./routes/ContactRoute'));
+
+
 app.get('*', (req, res) =>{
   res.sendFile(path.join(__dirname,'client/build/index.html'));
 });

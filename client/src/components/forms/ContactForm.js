@@ -3,8 +3,10 @@ import './../../styles/Form.scss'
 
 
 
-import React, { Component } from 'react'
-import swal from 'sweetalert';
+import React, { useEffect, useState } from 'react'
+ 
+ 
+import { Toast } from '../../helpers/MyAlerts';
 
 
 
@@ -15,90 +17,146 @@ import swal from 'sweetalert';
 
 
 
-class ContactForm extends Component {
-  componentDidMount() {
-    M.AutoInit();
-  }
+function ContactForm() {
+  useEffect(() => {
+    M.AutoInit();    
+  }, [])
 
 
 
 
 
 
+  
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+  const [error, setError] = useState('');
 
 
-  handleSubmit = (e)=>{
+  const handleSubmit = async (e)=>{
     e.preventDefault();
   
-  
-  
-    const myContactTitle = document.querySelector('#myContactTitle');
-    const myContactContent = document.querySelector('#myContactContent');
+    try {
+      Toast.fire({
+        icon: 'info',
+        title: 'Please wait...'
+      })
+
+      const response = await fetch('/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ title, content })
+      })
+    
+      const data = await response.json();
+      
+      console.log(data)
+      
+      if(data.error){
+        setError(data.msg);
+      } else {
+        Toast.fire({
+          icon: 'success',
+          title: 'Your message is sent.'
+        })
+      }
+
+     
+      
+    } catch (err) {
+     console.log(err);
+
+     if(err.error) setError(err.msg);
+    }
 
 
 
-
-    myContactTitle.value= '';
-    myContactContent.value= '';
-    swal("Sent", "Your message is sent. Thanks for contacting!","success");    
+    setTitle('');
+    setContent('')
+    
   }
 
 
 
 
 
+  useEffect(()=>{
+    if(error){
+      Toast.fire({
+        icon: 'error',
+        title: error
+      })
+    }
+  }, [error])
 
 
 
-  render() {
-    return (
-      <div className= "container">
-  
-  
-  
-        <form onSubmit= { this.handleSubmit } id="myContactForm">
-          <h2>Contact Us</h2>
-  
+
+  return (
+    <div className= "container" >
 
 
-  
-  
-  
-          <div className="input-field">            
-            <input type="text" name="contactTitle" id= "myContactTitle" required />
-            <label htmlFor="contactTitle">Title <span className="red-text">(*required)</span></label>
+
+      <form onSubmit= { handleSubmit } className="myDefaultForm" >
+        <h3 className="myDefaultFormName" >Contact Me</h3>
+
+
+
+
+
+
+        <div className="myInputHolder">            
+          <label htmlFor="title">Title <span className="red-text">(Required)</span></label>
+          <div>
+            <i className="myPrefix far fa-address-card"></i>
+            <input type="text" name="contactTitle" value={ title } onChange={ e=> setTitle(e.target.value) } required />
           </div>
+        </div>
 
-  
-  
-  
-  
-  
-  
-          <div className="input-field">            
-            <textarea name="content" className= "materialize-textarea" id= "myContactContent" required ></textarea>            
-            <label htmlFor="content">Content <span className="red-text">(*required)</span></label>
+
+
+
+
+
+
+        <div className="myInputHolder">
+        <label htmlFor="content">Content <span className="red-text">(Required)</span></label>
+          <div>
+            <i className="myPrefix fa fa-edit"></i>
+            <textarea name="content" className= "materialize-textarea" value={ content } onChange={ e=> setContent(e.target.value) } required ></textarea>
           </div>
+        </div>
 
 
 
 
 
 
-          <div className="input-field">
-            <button type="submit" className= "btn waves-effect waves-light" id= "myDownloadBtn">
-              <i className="fa fa-send"></i> Send
-            </button>
-          </div>
+        <div className="input-field right-align">
+          <button type="submit" className= "btn myBtn waves-effect waves-light" id= "myDownloadBtn">
+            <i className="fa fa-send"></i> Send
+          </button>
+        </div>
 
 
-
-
+        <div className="myDefaultFormFooter">
+          <p>Wanna know more about me?</p>
           
-        </form>
-      </div>
-    )
-  }
+          <p>
+            <a target="_blank" rel="noopener noreferrer" href="https://silvenleaf.github.io" className="myThemeColorText">SilvenLEAF.github.io</a>
+          </p>
+        </div>
+
+
+
+
+        
+      </form>
+    </div>
+  )
+
 }
 
 export default ContactForm
