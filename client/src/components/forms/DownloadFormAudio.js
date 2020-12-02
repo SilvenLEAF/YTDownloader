@@ -80,7 +80,7 @@ class DownloadFormAudio extends Component {
 
         <form onSubmit= { this.handleSubmit }>
           <div className="input-field">
-            <i className="fa fa-youtube-play prefix"></i>
+            <i className="fab fa-youtube prefix"></i>
             <input type="text" id="title" name="title" value= { this.state.title } onChange= {this.handleChange} />
             <label htmlFor="title">Title <span className="red-text">(Optional)</span></label>
           </div>
@@ -101,12 +101,12 @@ class DownloadFormAudio extends Component {
 
 
 
-          <div className="input-field">
-            <button type="submit" className= "btn waves-effect waves-light" id= "myDownloadBtn">
-              <i className="fa fa-download"></i> MP3
+          <div className="input-field myBtnsHolder right-align">
+            <button type="submit" className= "btn waves-effect waves-light myBtn myCornerless" id= "myDownloadBtn">
+              <i className="fa fa-download"></i> Download MP3
             </button>
 
-            <span className= "btn waves-effect waves-light blue" style={{ marginLeft: "15px" }} onClick={ ()=> this.setState({ title: '', youtubeUrl: '' }) } >
+            <span className= "btn waves-effect waves-light mySecondaryBtn myCornerless" style={{ marginLeft: "15px" }} onClick={ ()=> this.setState({ title: '', youtubeUrl: '' }) } >
               <i className="fa fa-paint-brush"></i> Clear
             </span>
           </div>

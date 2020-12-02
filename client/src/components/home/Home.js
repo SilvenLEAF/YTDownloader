@@ -29,7 +29,7 @@ class Home extends Component {
 
 
         <div className="myHeroHolder">          
-          <h3 className= "red-text center-align myHeroTitle"><i className="fab fa-youtube"></i> <span>Downloader</span></h3>
+          <h4 className= "red-text center-align myHeroTitle"><i className="fab fa-youtube"></i> <span>Download Content</span></h4>
         </div>    
 
 
