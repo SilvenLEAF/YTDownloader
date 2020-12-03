@@ -38,6 +38,7 @@ Then run ***node app*** on your terminal. Wait until you see a message like this
 ***
 
 ## Gallery 
-<img src="/YTDownloader Home.png" style="height: 400px" />
+<img src="/READMEimages/YTDownloader2d.png" style="height: 400px" />
+<img src="/READMEimages/YTDownloader3d.png" style="height: 400px" />
 
 ***
