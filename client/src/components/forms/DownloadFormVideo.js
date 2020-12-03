@@ -89,7 +89,7 @@ class DownloadFormVideo extends Component {
             <label htmlFor="youtubeUrl"><i className="fa fa-link"></i> Youtube URL <span className="red-text">(Required)</span></label>
             
             <div>
-            <input type="text" id="youtubeUrl" name="youtubeUrl" value= { this.state.youtubeUrl } onChange= {this.handleChange} required />
+            <input type="text" id="youtubeUrl" name="youtubeUrl" value= { this.state.youtubeUrl } onChange= {this.handleChange} required placeholder="e.g. https://youtu.be/..." />
             </div>
           </div>
 
@@ -103,7 +103,7 @@ class DownloadFormVideo extends Component {
             <label htmlFor="title"><i className="fab fa-youtube"></i> Title <span className="grey-text">(Optional)</span></label>
             
             <div>
-              <input type="text" id="title" name="title" value= { this.state.title } onChange= {this.handleChange} />
+              <input type="text" id="title" name="title" value= { this.state.title } onChange= {this.handleChange} placeholder="e.g. SilvenLEAF" />
             </div>
           </div>
 

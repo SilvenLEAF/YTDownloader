@@ -75,8 +75,13 @@ body{
 
 
 
+.nav.nav-wrapper{
+  background-color: #fff;
+  border-top: 7px solid $themeColor;
+  color: $themeColor !important;  
+}
 
-.nav.nav-wrapper, #myFooter{
+#myFooter{
   background-color: $themeColor;  
 }
 
@@ -84,6 +89,7 @@ body{
 .nav.nav-wrapper {
   font-family: Dosis, sans-serif;
   font-weight: 500;
+  
 
   .myProfileNavIcon{
     background-color: $bodyBG !important;
@@ -97,6 +103,7 @@ body{
   .brand-logo{
     font-size: 270%;
     font-family: Aladin, Dosis, sans-serif;
+    color: $themeColor !important;  
 
     @include mQ(400px){
       font-size: 220%;
@@ -105,12 +112,24 @@ body{
   
   ul.hide-on-med-and-down li a {
     font-size: 100%;
-    font-weight: 500;
+    font-weight: 400;
     font-family: Roboto, sans-serif;
+    color: #444 !important;
+    
+    &:active {
+      color: #111 !important;
+      font-weight: 500;
+    }
+    &:hover {
+      color: #111 !important;
+      font-weight: 500;
+      background: transparent !important;
+    }
   }
 
   ul.sidenav li a {
     font-size: 150%;
+    
   }
 }
 nav ul li:hover {
@@ -145,7 +164,8 @@ ul.sidenav {
   position: relative;
   // top: 10px;
   cursor: pointer;
-  color:#fff;
+  // color:#fff;
+  color: $themeColor !important;  
   i{
     margin: 0;
     // font-size: 200%;
